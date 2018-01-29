@@ -6,12 +6,11 @@ Test Teardown  Close Website
 *** Variables ***
 ${URL}    https://flyingdogz.github.io/
 ${BROWSER}  chrome
-#${item1}    Get Table   xpath=//table[contains(@class='table-hover')]
 
 *** Keywords ***
 
 Open Website
-    Open browser            ${URL}  ${BROWSER}
+    open browser            ${URL}  ${BROWSER}
 
 Close Website
 	close browser
@@ -20,105 +19,67 @@ Log in
 	[Arguments]  ${USERNAME}    ${PASSWORD}
 	input text      username    ${USERNAME}
 	input text      password    ${PASSWORD}
-    click button    xpath=//*[@class='btn btn-primary']
-
-#Input invalid username
-#	input text      username   Test1
-
-#Input valid username
-#	input text      username    admin
-
-#Input valid password
-#	input text      password    1234
-
-#Input invalid password
-#	input text      password    4321
-
-#Click to login
-#    click button      //button[.//text() = 'Login']
-#    click button    xpath=//*[@class='btn btn-primary']
+	click button    xpath=//*[@class='btn btn-primary']
 
 Wait for Login Result
-#    wait until element is visible    //table[contains(@class='table-hover')]
-     wait until element is visible   xpath=//table[@class='table table-hover']
-#     wait until element is visible  ${item1}
+	wait until element is visible   xpath=//table[@class='table table-hover']
 
 Wait for Error Message
 	wait until page contains    Invalid credentials
+
+Check initial user
+	[Arguments]  ${INITUSER}
+	${ROWCOUNT}     Get Matching Xpath Count    xpath=//table[@class='table table-hover']/tbody/tr
+	#${INITUSER}     Get text    xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]
+	Table should contain    xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]   ${INITUSER}
 
 Add new user
 	[Arguments]  ${NEWUSERNAME}    ${NEWPASSWORD}
 	input text      newUserName    ${NEWUSERNAME}
 	input text      newUserPassword    ${NEWPASSWORD}
     click button    xpath=//*[@class='btn btn-primary']
-
-Check new user added
-	[Arguments]  ${USERLIST}
-	Table should contain    xpath=//table[@class='table table-hover']   ${USERLIST}
-#	Table should contain    xpath=//table[@class='table table-hover']   ${USERLIST}
-
-Check user list
-	[Arguments]  ${USERLIST}
-	Table should contain    xpath=//table[@class='table table-hover']   ${USERLIST}
+	${ROWCOUNT}     Get Matching Xpath Count    xpath=//table[@class='table table-hover']/tbody/tr
+	Table should contain    xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]   ${NEWUSERNAME}
 
 Delete user
-	click button    xpath=//*[@class='btn btn-danger btn-xs']
+	${ROWCOUNT}     Get Matching Xpath Count    xpath=//table[@class='table table-hover']/tbody/tr
+	Click Element    xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]//*[@class='btn btn-danger btn-xs']
+
 
 Check after delete user
-	Wait until page does not contain    NewUser     [timeout]  =10
-	${COUNT}    Get matching xpath count   //table[@class='table table-hover']/tr
+	[Arguments]  ${USER}
+	${ROWCOUNT}     Get Matching Xpath Count    xpath=//table[@class='table table-hover']/tbody/tr
+	Wait Until Element Does Not Contain     xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]     ${USER}
+
 
 *** Test Cases ***
 Test Case1: Verify invalid username
 	Log in      test1   1234
-##	Input invalid username
-##	Input valid password
-##	click to login
-#	Wait for Error Message
-#
-#Test Case2: Verify invalid password
-#	Log in      admin   4321
-##	Input valid username
-##	Input invalid password
-##	Click to login
-#	Wait for Error Message
-#
-#Test Case3: Verify invalid username and password
-#	Log in      test1   4321
-##	Input invalid username
-##	Input invalid password
-##	click to login
-#	Wait for Error Message
-#
-#Test Case4: Verify valid username and
-#	Log in      admin   1234
-##	Input valid username
-##	Input valid password
-##	click to login
-#	wait for login result
-#
-#Test Case5: Verify the existing data
-#	Log in      admin   1234
-##	Input valid username
-##	Input valid password
-##	click to login
-#	wait for login result
-#	check user list     user1
+	Wait for Error Message
+
+Test Case2: Verify invalid password
+	Log in      admin   4321
+	Wait for Error Message
+
+Test Case3: Verify invalid username and password
+	Log in      test1   4321
+	Wait for Error Message
+
+Test Case4: Verify valid username and
+	Log in      admin   1234
+	wait for login result
+
+Test Case5: Verify the existing data
+	Log in      admin   1234
+	check initial user  user1
 
 Test Case6: Verify new user creation
 	Log in      admin   1234
-#	Input valid username
-#	Input valid password
-#	click to login
-#	wait for login result
 	Add new user            NewUser     1111
-	Check new user added    NewUser
 
-#Test Case7: Verify the user removed
-#	Input valid username
-#	Input valid password
-#	click to login
-#	wait for login result
-#	Add new user
-#	Delete user
-#	Check after delete user
+
+Test Case7: Verify the user removed
+	Log in      admin   1234
+	Add new user            NewUser     1111
+	Delete user
+	Check after delete user     NewUser
