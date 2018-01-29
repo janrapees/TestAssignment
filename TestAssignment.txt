@@ -4,82 +4,81 @@ Test Setup  Open Website
 Test Teardown  Close Website
 
 *** Variables ***
-${URL}    https://flyingdogz.github.io/
-${BROWSER}  chrome
+${URL}          https://flyingdogz.github.io/
+${BROWSER}      chrome
 
 *** Keywords ***
 
 Open Website
-    open browser            ${URL}  ${BROWSER}
+	open browser                ${URL}      ${BROWSER}
 
 Close Website
 	close browser
 
 Log in
-	[Arguments]  ${USERNAME}    ${PASSWORD}
-	input text      username    ${USERNAME}
-	input text      password    ${PASSWORD}
+	[Arguments]     ${USERNAME}     ${PASSWORD}
+	input text      username        ${USERNAME}
+	input text      password        ${PASSWORD}
 	click button    xpath=//*[@class='btn btn-primary']
 
 Wait for Login Result
 	wait until element is visible   xpath=//table[@class='table table-hover']
 
 Wait for Error Message
-	wait until page contains    Invalid credentials
+	wait until page contains        Invalid credentials
 
 Check initial user
-	[Arguments]  ${INITUSER}
-	${ROWCOUNT}     Get Matching Xpath Count    xpath=//table[@class='table table-hover']/tbody/tr
-	#${INITUSER}     Get text    xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]
-	Table should contain    xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]   ${INITUSER}
+	[Arguments]     ${INITUSER}
+	${ROWCOUNT}                     Get Matching Xpath Count    xpath=//table[@class='table table-hover']/tbody/tr
+	Table should contain            xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]   ${INITUSER}
 
 Add new user
-	[Arguments]  ${NEWUSERNAME}    ${NEWPASSWORD}
-	input text      newUserName    ${NEWUSERNAME}
-	input text      newUserPassword    ${NEWPASSWORD}
-    click button    xpath=//*[@class='btn btn-primary']
+	[Arguments]     ${NEWUSERNAME}      ${NEWPASSWORD}
+	input text      newUserName         ${NEWUSERNAME}
+	input text      newUserPassword     ${NEWPASSWORD}
+	click button    xpath=//*[@class='btn btn-primary']
 	${ROWCOUNT}     Get Matching Xpath Count    xpath=//table[@class='table table-hover']/tbody/tr
 	Table should contain    xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]   ${NEWUSERNAME}
 
 Delete user
-	${ROWCOUNT}     Get Matching Xpath Count    xpath=//table[@class='table table-hover']/tbody/tr
+	${ROWCOUNT}      Get Matching Xpath Count    xpath=//table[@class='table table-hover']/tbody/tr
 	Click Element    xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]//*[@class='btn btn-danger btn-xs']
 
 
 Check after delete user
 	[Arguments]  ${USER}
 	${ROWCOUNT}     Get Matching Xpath Count    xpath=//table[@class='table table-hover']/tbody/tr
-	Wait Until Element Does Not Contain     xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]     ${USER}
+	Wait Until Element Does Not Contain         xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]     ${USER}
 
 
 *** Test Cases ***
-Test Case1: Verify invalid username
+Test Case1: To verify the error message when the user login with invalid user and valid password
 	Log in      test1   1234
 	Wait for Error Message
 
-Test Case2: Verify invalid password
+Test Case2: To verify the error message when the user login with valid user and invalid password
 	Log in      admin   4321
 	Wait for Error Message
 
-Test Case3: Verify invalid username and password
+Test Case3: To verify the error message when the user login with invalid user and invalid password
 	Log in      test1   4321
 	Wait for Error Message
 
-Test Case4: Verify valid username and
+Test Case4: To verify that the user login to the website with valid user and valid password
 	Log in      admin   1234
 	wait for login result
 
-Test Case5: Verify the existing data
+Test Case5: To verify the initial user existing in the user list table
 	Log in      admin   1234
 	check initial user  user1
 
-Test Case6: Verify new user creation
+Test Case6: To verify that the user can add new user and the new user is added in the user list table
 	Log in      admin   1234
 	Add new user            NewUser     1111
 
 
-Test Case7: Verify the user removed
+Test Case7: To verify that the user can delete the new user and to check that the new user is removed from the user list table
 	Log in      admin   1234
-	Add new user            NewUser     1111
+	Add new user                NewUser     1111
 	Delete user
 	Check after delete user     NewUser

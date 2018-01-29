@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180129 22:50:58.826" generator="Robot 3.0.1 (Python 2.7.13 on win32)">
+<robot generated="20180129 23:46:37.976" generator="Robot 3.0.1 (Python 2.7.13 on win32)">
 <suite source="D:\janrapees\Documents\Aim\Automation\TestRobot\TestAssignment.txt" id="s1" name="TestAssignment">
-<test id="s1-t1" name="Test Case1: Verify invalid username">
+<test id="s1-t1" name="Test Case1: To verify the error message when the user login with invalid user and valid password">
 <kw type="setup" name="Open Website">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -9,10 +9,10 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180129 22:50:59.003" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
-<status status="PASS" endtime="20180129 22:51:19.997" starttime="20180129 22:50:59.003"></status>
+<msg timestamp="20180129 23:46:38.147" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
+<status status="PASS" endtime="20180129 23:47:03.052" starttime="20180129 23:46:38.147"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:19.998" starttime="20180129 22:50:59.003"></status>
+<status status="PASS" endtime="20180129 23:47:03.052" starttime="20180129 23:46:38.147"></status>
 </kw>
 <kw name="Log in">
 <arguments>
@@ -25,8 +25,8 @@
 <arg>username</arg>
 <arg>${USERNAME}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:20.000" level="INFO">Typing text 'test1' into text field 'username'</msg>
-<status status="PASS" endtime="20180129 22:51:20.155" starttime="20180129 22:51:19.999"></status>
+<msg timestamp="20180129 23:47:03.053" level="INFO">Typing text 'test1' into text field 'username'</msg>
+<status status="PASS" endtime="20180129 23:47:03.239" starttime="20180129 23:47:03.053"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -34,18 +34,18 @@
 <arg>password</arg>
 <arg>${PASSWORD}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:20.156" level="INFO">Typing text '1234' into text field 'password'</msg>
-<status status="PASS" endtime="20180129 22:51:20.284" starttime="20180129 22:51:20.156"></status>
+<msg timestamp="20180129 23:47:03.240" level="INFO">Typing text '1234' into text field 'password'</msg>
+<status status="PASS" endtime="20180129 23:47:03.413" starttime="20180129 23:47:03.240"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@class='btn btn-primary']</arg>
 </arguments>
-<msg timestamp="20180129 22:51:20.285" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
-<status status="PASS" endtime="20180129 22:51:20.416" starttime="20180129 22:51:20.284"></status>
+<msg timestamp="20180129 23:47:03.413" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
+<status status="PASS" endtime="20180129 23:47:03.528" starttime="20180129 23:47:03.413"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:20.416" starttime="20180129 22:51:19.999"></status>
+<status status="PASS" endtime="20180129 23:47:03.528" starttime="20180129 23:47:03.053"></status>
 </kw>
 <kw name="Wait for Error Message">
 <kw name="Wait Until Page Contains" library="Selenium2Library">
@@ -53,20 +53,20 @@
 <arguments>
 <arg>Invalid credentials</arg>
 </arguments>
-<status status="PASS" endtime="20180129 22:51:20.442" starttime="20180129 22:51:20.417"></status>
+<status status="PASS" endtime="20180129 23:47:03.555" starttime="20180129 23:47:03.531"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:20.442" starttime="20180129 22:51:20.416"></status>
+<status status="PASS" endtime="20180129 23:47:03.556" starttime="20180129 23:47:03.530"></status>
 </kw>
 <kw type="teardown" name="Close Website">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180129 22:51:23.535" starttime="20180129 22:51:20.443"></status>
+<status status="PASS" endtime="20180129 23:47:06.661" starttime="20180129 23:47:03.557"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:23.536" starttime="20180129 22:51:20.443"></status>
+<status status="PASS" endtime="20180129 23:47:06.661" starttime="20180129 23:47:03.556"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:23.538" critical="yes" starttime="20180129 22:50:59.002"></status>
+<status status="PASS" endtime="20180129 23:47:06.663" critical="yes" starttime="20180129 23:46:38.146"></status>
 </test>
-<test id="s1-t2" name="Test Case2: Verify invalid password">
+<test id="s1-t2" name="Test Case2: To verify the error message when the user login with valid user and invalid password">
 <kw type="setup" name="Open Website">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -74,10 +74,10 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:23.549" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
-<status status="PASS" endtime="20180129 22:51:30.033" starttime="20180129 22:51:23.548"></status>
+<msg timestamp="20180129 23:47:06.675" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
+<status status="PASS" endtime="20180129 23:47:13.264" starttime="20180129 23:47:06.674"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:30.033" starttime="20180129 22:51:23.547"></status>
+<status status="PASS" endtime="20180129 23:47:13.264" starttime="20180129 23:47:06.673"></status>
 </kw>
 <kw name="Log in">
 <arguments>
@@ -90,8 +90,8 @@
 <arg>username</arg>
 <arg>${USERNAME}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:30.034" level="INFO">Typing text 'admin' into text field 'username'</msg>
-<status status="PASS" endtime="20180129 22:51:30.198" starttime="20180129 22:51:30.034"></status>
+<msg timestamp="20180129 23:47:13.275" level="INFO">Typing text 'admin' into text field 'username'</msg>
+<status status="PASS" endtime="20180129 23:47:13.441" starttime="20180129 23:47:13.275"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -99,18 +99,18 @@
 <arg>password</arg>
 <arg>${PASSWORD}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:30.199" level="INFO">Typing text '4321' into text field 'password'</msg>
-<status status="PASS" endtime="20180129 22:51:30.332" starttime="20180129 22:51:30.198"></status>
+<msg timestamp="20180129 23:47:13.442" level="INFO">Typing text '4321' into text field 'password'</msg>
+<status status="PASS" endtime="20180129 23:47:13.553" starttime="20180129 23:47:13.441"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@class='btn btn-primary']</arg>
 </arguments>
-<msg timestamp="20180129 22:51:30.333" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
-<status status="PASS" endtime="20180129 22:51:30.463" starttime="20180129 22:51:30.332"></status>
+<msg timestamp="20180129 23:47:13.554" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
+<status status="PASS" endtime="20180129 23:47:13.692" starttime="20180129 23:47:13.553"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:30.463" starttime="20180129 22:51:30.033"></status>
+<status status="PASS" endtime="20180129 23:47:13.692" starttime="20180129 23:47:13.273"></status>
 </kw>
 <kw name="Wait for Error Message">
 <kw name="Wait Until Page Contains" library="Selenium2Library">
@@ -118,20 +118,20 @@
 <arguments>
 <arg>Invalid credentials</arg>
 </arguments>
-<status status="PASS" endtime="20180129 22:51:30.484" starttime="20180129 22:51:30.464"></status>
+<status status="PASS" endtime="20180129 23:47:13.713" starttime="20180129 23:47:13.693"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:30.484" starttime="20180129 22:51:30.464"></status>
+<status status="PASS" endtime="20180129 23:47:13.714" starttime="20180129 23:47:13.693"></status>
 </kw>
 <kw type="teardown" name="Close Website">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180129 22:51:33.573" starttime="20180129 22:51:30.485"></status>
+<status status="PASS" endtime="20180129 23:47:16.843" starttime="20180129 23:47:13.714"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:33.573" starttime="20180129 22:51:30.485"></status>
+<status status="PASS" endtime="20180129 23:47:16.843" starttime="20180129 23:47:13.714"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:33.574" critical="yes" starttime="20180129 22:51:23.546"></status>
+<status status="PASS" endtime="20180129 23:47:16.845" critical="yes" starttime="20180129 23:47:06.670"></status>
 </test>
-<test id="s1-t3" name="Test Case3: Verify invalid username and password">
+<test id="s1-t3" name="Test Case3: To verify the error message when the user login with invalid user and invalid password">
 <kw type="setup" name="Open Website">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -139,10 +139,10 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:33.584" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
-<status status="PASS" endtime="20180129 22:51:40.639" starttime="20180129 22:51:33.584"></status>
+<msg timestamp="20180129 23:47:16.855" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
+<status status="PASS" endtime="20180129 23:47:26.841" starttime="20180129 23:47:16.854"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:40.639" starttime="20180129 22:51:33.583"></status>
+<status status="PASS" endtime="20180129 23:47:26.841" starttime="20180129 23:47:16.853"></status>
 </kw>
 <kw name="Log in">
 <arguments>
@@ -155,8 +155,8 @@
 <arg>username</arg>
 <arg>${USERNAME}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:40.642" level="INFO">Typing text 'test1' into text field 'username'</msg>
-<status status="PASS" endtime="20180129 22:51:40.833" starttime="20180129 22:51:40.642"></status>
+<msg timestamp="20180129 23:47:26.844" level="INFO">Typing text 'test1' into text field 'username'</msg>
+<status status="PASS" endtime="20180129 23:47:27.038" starttime="20180129 23:47:26.843"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -164,18 +164,18 @@
 <arg>password</arg>
 <arg>${PASSWORD}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:40.834" level="INFO">Typing text '4321' into text field 'password'</msg>
-<status status="PASS" endtime="20180129 22:51:40.996" starttime="20180129 22:51:40.833"></status>
+<msg timestamp="20180129 23:47:27.039" level="INFO">Typing text '4321' into text field 'password'</msg>
+<status status="PASS" endtime="20180129 23:47:27.175" starttime="20180129 23:47:27.039"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@class='btn btn-primary']</arg>
 </arguments>
-<msg timestamp="20180129 22:51:40.997" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
-<status status="PASS" endtime="20180129 22:51:41.127" starttime="20180129 22:51:40.996"></status>
+<msg timestamp="20180129 23:47:27.175" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
+<status status="PASS" endtime="20180129 23:47:27.341" starttime="20180129 23:47:27.175"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:41.128" starttime="20180129 22:51:40.640"></status>
+<status status="PASS" endtime="20180129 23:47:27.342" starttime="20180129 23:47:26.842"></status>
 </kw>
 <kw name="Wait for Error Message">
 <kw name="Wait Until Page Contains" library="Selenium2Library">
@@ -183,20 +183,20 @@
 <arguments>
 <arg>Invalid credentials</arg>
 </arguments>
-<status status="PASS" endtime="20180129 22:51:41.150" starttime="20180129 22:51:41.128"></status>
+<status status="PASS" endtime="20180129 23:47:27.373" starttime="20180129 23:47:27.345"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:41.150" starttime="20180129 22:51:41.128"></status>
+<status status="PASS" endtime="20180129 23:47:27.373" starttime="20180129 23:47:27.343"></status>
 </kw>
 <kw type="teardown" name="Close Website">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180129 22:51:44.246" starttime="20180129 22:51:41.153"></status>
+<status status="PASS" endtime="20180129 23:47:30.518" starttime="20180129 23:47:27.376"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:44.246" starttime="20180129 22:51:41.152"></status>
+<status status="PASS" endtime="20180129 23:47:30.518" starttime="20180129 23:47:27.375"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:44.247" critical="yes" starttime="20180129 22:51:33.581"></status>
+<status status="PASS" endtime="20180129 23:47:30.520" critical="yes" starttime="20180129 23:47:16.851"></status>
 </test>
-<test id="s1-t4" name="Test Case4: Verify valid username and">
+<test id="s1-t4" name="Test Case4: To verify that the user login to the website with valid user and valid password">
 <kw type="setup" name="Open Website">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -204,10 +204,10 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:44.258" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
-<status status="PASS" endtime="20180129 22:51:50.774" starttime="20180129 22:51:44.257"></status>
+<msg timestamp="20180129 23:47:30.532" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
+<status status="PASS" endtime="20180129 23:47:40.675" starttime="20180129 23:47:30.531"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:50.774" starttime="20180129 22:51:44.255"></status>
+<status status="PASS" endtime="20180129 23:47:40.676" starttime="20180129 23:47:30.530"></status>
 </kw>
 <kw name="Log in">
 <arguments>
@@ -220,8 +220,8 @@
 <arg>username</arg>
 <arg>${USERNAME}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:50.776" level="INFO">Typing text 'admin' into text field 'username'</msg>
-<status status="PASS" endtime="20180129 22:51:50.911" starttime="20180129 22:51:50.776"></status>
+<msg timestamp="20180129 23:47:40.679" level="INFO">Typing text 'admin' into text field 'username'</msg>
+<status status="PASS" endtime="20180129 23:47:40.851" starttime="20180129 23:47:40.679"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -229,18 +229,18 @@
 <arg>password</arg>
 <arg>${PASSWORD}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:50.911" level="INFO">Typing text '1234' into text field 'password'</msg>
-<status status="PASS" endtime="20180129 22:51:51.033" starttime="20180129 22:51:50.911"></status>
+<msg timestamp="20180129 23:47:40.851" level="INFO">Typing text '1234' into text field 'password'</msg>
+<status status="PASS" endtime="20180129 23:47:40.965" starttime="20180129 23:47:40.851"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@class='btn btn-primary']</arg>
 </arguments>
-<msg timestamp="20180129 22:51:51.034" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
-<status status="PASS" endtime="20180129 22:51:51.262" starttime="20180129 22:51:51.033"></status>
+<msg timestamp="20180129 23:47:40.966" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
+<status status="PASS" endtime="20180129 23:47:41.194" starttime="20180129 23:47:40.966"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:51.262" starttime="20180129 22:51:50.775"></status>
+<status status="PASS" endtime="20180129 23:47:41.194" starttime="20180129 23:47:40.678"></status>
 </kw>
 <kw name="Wait for Login Result">
 <kw name="Wait Until Element Is Visible" library="Selenium2Library">
@@ -248,20 +248,20 @@
 <arguments>
 <arg>xpath=//table[@class='table table-hover']</arg>
 </arguments>
-<status status="PASS" endtime="20180129 22:51:51.308" starttime="20180129 22:51:51.263"></status>
+<status status="PASS" endtime="20180129 23:47:41.249" starttime="20180129 23:47:41.195"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:51.308" starttime="20180129 22:51:51.263"></status>
+<status status="PASS" endtime="20180129 23:47:41.249" starttime="20180129 23:47:41.195"></status>
 </kw>
 <kw type="teardown" name="Close Website">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180129 22:51:54.397" starttime="20180129 22:51:51.309"></status>
+<status status="PASS" endtime="20180129 23:47:44.420" starttime="20180129 23:47:41.250"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:54.397" starttime="20180129 22:51:51.309"></status>
+<status status="PASS" endtime="20180129 23:47:44.420" starttime="20180129 23:47:41.250"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:51:54.399" critical="yes" starttime="20180129 22:51:44.253"></status>
+<status status="PASS" endtime="20180129 23:47:44.421" critical="yes" starttime="20180129 23:47:30.527"></status>
 </test>
-<test id="s1-t5" name="Test Case5: Verify the existing data">
+<test id="s1-t5" name="Test Case5: To verify the initial user existing in the user list table">
 <kw type="setup" name="Open Website">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -269,10 +269,10 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180129 22:51:54.411" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
-<status status="PASS" endtime="20180129 22:52:01.117" starttime="20180129 22:51:54.410"></status>
+<msg timestamp="20180129 23:47:44.424" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
+<status status="PASS" endtime="20180129 23:47:51.199" starttime="20180129 23:47:44.424"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:01.117" starttime="20180129 22:51:54.409"></status>
+<status status="PASS" endtime="20180129 23:47:51.199" starttime="20180129 23:47:44.423"></status>
 </kw>
 <kw name="Log in">
 <arguments>
@@ -285,8 +285,8 @@
 <arg>username</arg>
 <arg>${USERNAME}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:01.119" level="INFO">Typing text 'admin' into text field 'username'</msg>
-<status status="PASS" endtime="20180129 22:52:01.313" starttime="20180129 22:52:01.119"></status>
+<msg timestamp="20180129 23:47:51.200" level="INFO">Typing text 'admin' into text field 'username'</msg>
+<status status="PASS" endtime="20180129 23:47:51.397" starttime="20180129 23:47:51.200"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -294,18 +294,18 @@
 <arg>password</arg>
 <arg>${PASSWORD}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:01.314" level="INFO">Typing text '1234' into text field 'password'</msg>
-<status status="PASS" endtime="20180129 22:52:01.439" starttime="20180129 22:52:01.313"></status>
+<msg timestamp="20180129 23:47:51.398" level="INFO">Typing text '1234' into text field 'password'</msg>
+<status status="PASS" endtime="20180129 23:47:51.527" starttime="20180129 23:47:51.397"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@class='btn btn-primary']</arg>
 </arguments>
-<msg timestamp="20180129 22:52:01.440" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
-<status status="PASS" endtime="20180129 22:52:01.639" starttime="20180129 22:52:01.439"></status>
+<msg timestamp="20180129 23:47:51.528" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
+<status status="PASS" endtime="20180129 23:47:51.738" starttime="20180129 23:47:51.527"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:01.640" starttime="20180129 22:52:01.118"></status>
+<status status="PASS" endtime="20180129 23:47:51.739" starttime="20180129 23:47:51.200"></status>
 </kw>
 <kw name="Check initial user">
 <arguments>
@@ -319,8 +319,8 @@
 <assign>
 <var>${ROWCOUNT}</var>
 </assign>
-<msg timestamp="20180129 22:52:01.661" level="INFO">${ROWCOUNT} = 1</msg>
-<status status="PASS" endtime="20180129 22:52:01.661" starttime="20180129 22:52:01.640"></status>
+<msg timestamp="20180129 23:47:51.769" level="INFO">${ROWCOUNT} = 1</msg>
+<status status="PASS" endtime="20180129 23:47:51.769" starttime="20180129 23:47:51.740"></status>
 </kw>
 <kw name="Table Should Contain" library="Selenium2Library">
 <doc>Verifies that `expected` can be found somewhere in the table.</doc>
@@ -328,20 +328,20 @@
 <arg>xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]</arg>
 <arg>${INITUSER}</arg>
 </arguments>
-<status status="PASS" endtime="20180129 22:52:01.704" starttime="20180129 22:52:01.661"></status>
+<status status="PASS" endtime="20180129 23:47:51.826" starttime="20180129 23:47:51.769"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:01.704" starttime="20180129 22:52:01.640"></status>
+<status status="PASS" endtime="20180129 23:47:51.826" starttime="20180129 23:47:51.739"></status>
 </kw>
 <kw type="teardown" name="Close Website">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180129 22:52:04.796" starttime="20180129 22:52:01.706"></status>
+<status status="PASS" endtime="20180129 23:47:54.922" starttime="20180129 23:47:51.827"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:04.797" starttime="20180129 22:52:01.706"></status>
+<status status="PASS" endtime="20180129 23:47:54.922" starttime="20180129 23:47:51.827"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:04.799" critical="yes" starttime="20180129 22:51:54.407"></status>
+<status status="PASS" endtime="20180129 23:47:54.924" critical="yes" starttime="20180129 23:47:44.423"></status>
 </test>
-<test id="s1-t6" name="Test Case6: Verify new user creation">
+<test id="s1-t6" name="Test Case6: To verify that the user can add new user and the new user is added in the user list table">
 <kw type="setup" name="Open Website">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -349,10 +349,10 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:04.812" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
-<status status="PASS" endtime="20180129 22:52:11.478" starttime="20180129 22:52:04.811"></status>
+<msg timestamp="20180129 23:47:54.936" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
+<status status="PASS" endtime="20180129 23:48:04.743" starttime="20180129 23:47:54.935"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:11.478" starttime="20180129 22:52:04.810"></status>
+<status status="PASS" endtime="20180129 23:48:04.743" starttime="20180129 23:47:54.933"></status>
 </kw>
 <kw name="Log in">
 <arguments>
@@ -365,8 +365,8 @@
 <arg>username</arg>
 <arg>${USERNAME}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:11.479" level="INFO">Typing text 'admin' into text field 'username'</msg>
-<status status="PASS" endtime="20180129 22:52:11.613" starttime="20180129 22:52:11.479"></status>
+<msg timestamp="20180129 23:48:04.745" level="INFO">Typing text 'admin' into text field 'username'</msg>
+<status status="PASS" endtime="20180129 23:48:04.915" starttime="20180129 23:48:04.745"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -374,18 +374,18 @@
 <arg>password</arg>
 <arg>${PASSWORD}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:11.615" level="INFO">Typing text '1234' into text field 'password'</msg>
-<status status="PASS" endtime="20180129 22:52:11.751" starttime="20180129 22:52:11.614"></status>
+<msg timestamp="20180129 23:48:04.917" level="INFO">Typing text '1234' into text field 'password'</msg>
+<status status="PASS" endtime="20180129 23:48:05.042" starttime="20180129 23:48:04.915"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@class='btn btn-primary']</arg>
 </arguments>
-<msg timestamp="20180129 22:52:11.751" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
-<status status="PASS" endtime="20180129 22:52:11.964" starttime="20180129 22:52:11.751"></status>
+<msg timestamp="20180129 23:48:05.043" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
+<status status="PASS" endtime="20180129 23:48:05.261" starttime="20180129 23:48:05.042"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:11.964" starttime="20180129 22:52:11.479"></status>
+<status status="PASS" endtime="20180129 23:48:05.262" starttime="20180129 23:48:04.745"></status>
 </kw>
 <kw name="Add new user">
 <arguments>
@@ -398,8 +398,8 @@
 <arg>newUserName</arg>
 <arg>${NEWUSERNAME}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:11.965" level="INFO">Typing text 'NewUser' into text field 'newUserName'</msg>
-<status status="PASS" endtime="20180129 22:52:12.114" starttime="20180129 22:52:11.965"></status>
+<msg timestamp="20180129 23:48:05.263" level="INFO">Typing text 'NewUser' into text field 'newUserName'</msg>
+<status status="PASS" endtime="20180129 23:48:05.422" starttime="20180129 23:48:05.263"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -407,16 +407,16 @@
 <arg>newUserPassword</arg>
 <arg>${NEWPASSWORD}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:12.114" level="INFO">Typing text '1111' into text field 'newUserPassword'</msg>
-<status status="PASS" endtime="20180129 22:52:12.213" starttime="20180129 22:52:12.114"></status>
+<msg timestamp="20180129 23:48:05.423" level="INFO">Typing text '1111' into text field 'newUserPassword'</msg>
+<status status="PASS" endtime="20180129 23:48:05.521" starttime="20180129 23:48:05.422"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@class='btn btn-primary']</arg>
 </arguments>
-<msg timestamp="20180129 22:52:12.213" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
-<status status="PASS" endtime="20180129 22:52:12.315" starttime="20180129 22:52:12.213"></status>
+<msg timestamp="20180129 23:48:05.522" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
+<status status="PASS" endtime="20180129 23:48:05.626" starttime="20180129 23:48:05.521"></status>
 </kw>
 <kw name="Get Matching Xpath Count" library="Selenium2Library">
 <doc>Returns number of elements matching `xpath`</doc>
@@ -426,8 +426,8 @@
 <assign>
 <var>${ROWCOUNT}</var>
 </assign>
-<msg timestamp="20180129 22:52:12.334" level="INFO">${ROWCOUNT} = 2</msg>
-<status status="PASS" endtime="20180129 22:52:12.334" starttime="20180129 22:52:12.315"></status>
+<msg timestamp="20180129 23:48:05.654" level="INFO">${ROWCOUNT} = 2</msg>
+<status status="PASS" endtime="20180129 23:48:05.655" starttime="20180129 23:48:05.626"></status>
 </kw>
 <kw name="Table Should Contain" library="Selenium2Library">
 <doc>Verifies that `expected` can be found somewhere in the table.</doc>
@@ -435,20 +435,20 @@
 <arg>xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]</arg>
 <arg>${NEWUSERNAME}</arg>
 </arguments>
-<status status="PASS" endtime="20180129 22:52:12.387" starttime="20180129 22:52:12.334"></status>
+<status status="PASS" endtime="20180129 23:48:05.702" starttime="20180129 23:48:05.655"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:12.387" starttime="20180129 22:52:11.965"></status>
+<status status="PASS" endtime="20180129 23:48:05.702" starttime="20180129 23:48:05.262"></status>
 </kw>
 <kw type="teardown" name="Close Website">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180129 22:52:15.477" starttime="20180129 22:52:12.389"></status>
+<status status="PASS" endtime="20180129 23:48:08.854" starttime="20180129 23:48:05.703"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:15.477" starttime="20180129 22:52:12.388"></status>
+<status status="PASS" endtime="20180129 23:48:08.854" starttime="20180129 23:48:05.702"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:15.479" critical="yes" starttime="20180129 22:52:04.807"></status>
+<status status="PASS" endtime="20180129 23:48:08.855" critical="yes" starttime="20180129 23:47:54.930"></status>
 </test>
-<test id="s1-t7" name="Test Case7: Verify the user removed">
+<test id="s1-t7" name="Test Case7: To verify that the user can delete the new user and to check that the new user is removed from the user list table">
 <kw type="setup" name="Open Website">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -456,10 +456,10 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:15.491" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
-<status status="PASS" endtime="20180129 22:52:21.529" starttime="20180129 22:52:15.490"></status>
+<msg timestamp="20180129 23:48:08.866" level="INFO">Opening browser 'chrome' to base url 'https://flyingdogz.github.io/'</msg>
+<status status="PASS" endtime="20180129 23:48:18.820" starttime="20180129 23:48:08.864"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:21.529" starttime="20180129 22:52:15.489"></status>
+<status status="PASS" endtime="20180129 23:48:18.821" starttime="20180129 23:48:08.862"></status>
 </kw>
 <kw name="Log in">
 <arguments>
@@ -472,8 +472,8 @@
 <arg>username</arg>
 <arg>${USERNAME}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:21.530" level="INFO">Typing text 'admin' into text field 'username'</msg>
-<status status="PASS" endtime="20180129 22:52:21.714" starttime="20180129 22:52:21.530"></status>
+<msg timestamp="20180129 23:48:18.823" level="INFO">Typing text 'admin' into text field 'username'</msg>
+<status status="PASS" endtime="20180129 23:48:18.975" starttime="20180129 23:48:18.822"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -481,18 +481,18 @@
 <arg>password</arg>
 <arg>${PASSWORD}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:21.715" level="INFO">Typing text '1234' into text field 'password'</msg>
-<status status="PASS" endtime="20180129 22:52:21.830" starttime="20180129 22:52:21.715"></status>
+<msg timestamp="20180129 23:48:18.977" level="INFO">Typing text '1234' into text field 'password'</msg>
+<status status="PASS" endtime="20180129 23:48:19.102" starttime="20180129 23:48:18.975"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@class='btn btn-primary']</arg>
 </arguments>
-<msg timestamp="20180129 22:52:21.830" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
-<status status="PASS" endtime="20180129 22:52:22.044" starttime="20180129 22:52:21.830"></status>
+<msg timestamp="20180129 23:48:19.102" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
+<status status="PASS" endtime="20180129 23:48:19.308" starttime="20180129 23:48:19.102"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:22.044" starttime="20180129 22:52:21.529"></status>
+<status status="PASS" endtime="20180129 23:48:19.309" starttime="20180129 23:48:18.822"></status>
 </kw>
 <kw name="Add new user">
 <arguments>
@@ -505,8 +505,8 @@
 <arg>newUserName</arg>
 <arg>${NEWUSERNAME}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:22.045" level="INFO">Typing text 'NewUser' into text field 'newUserName'</msg>
-<status status="PASS" endtime="20180129 22:52:22.195" starttime="20180129 22:52:22.045"></status>
+<msg timestamp="20180129 23:48:19.310" level="INFO">Typing text 'NewUser' into text field 'newUserName'</msg>
+<status status="PASS" endtime="20180129 23:48:19.478" starttime="20180129 23:48:19.310"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -514,16 +514,16 @@
 <arg>newUserPassword</arg>
 <arg>${NEWPASSWORD}</arg>
 </arguments>
-<msg timestamp="20180129 22:52:22.196" level="INFO">Typing text '1111' into text field 'newUserPassword'</msg>
-<status status="PASS" endtime="20180129 22:52:22.295" starttime="20180129 22:52:22.195"></status>
+<msg timestamp="20180129 23:48:19.478" level="INFO">Typing text '1111' into text field 'newUserPassword'</msg>
+<status status="PASS" endtime="20180129 23:48:19.584" starttime="20180129 23:48:19.478"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@class='btn btn-primary']</arg>
 </arguments>
-<msg timestamp="20180129 22:52:22.296" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
-<status status="PASS" endtime="20180129 22:52:22.398" starttime="20180129 22:52:22.296"></status>
+<msg timestamp="20180129 23:48:19.585" level="INFO">Clicking button 'xpath=//*[@class='btn btn-primary']'.</msg>
+<status status="PASS" endtime="20180129 23:48:19.692" starttime="20180129 23:48:19.585"></status>
 </kw>
 <kw name="Get Matching Xpath Count" library="Selenium2Library">
 <doc>Returns number of elements matching `xpath`</doc>
@@ -533,8 +533,8 @@
 <assign>
 <var>${ROWCOUNT}</var>
 </assign>
-<msg timestamp="20180129 22:52:22.423" level="INFO">${ROWCOUNT} = 2</msg>
-<status status="PASS" endtime="20180129 22:52:22.423" starttime="20180129 22:52:22.398"></status>
+<msg timestamp="20180129 23:48:19.720" level="INFO">${ROWCOUNT} = 2</msg>
+<status status="PASS" endtime="20180129 23:48:19.720" starttime="20180129 23:48:19.693"></status>
 </kw>
 <kw name="Table Should Contain" library="Selenium2Library">
 <doc>Verifies that `expected` can be found somewhere in the table.</doc>
@@ -542,9 +542,9 @@
 <arg>xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]</arg>
 <arg>${NEWUSERNAME}</arg>
 </arguments>
-<status status="PASS" endtime="20180129 22:52:22.473" starttime="20180129 22:52:22.423"></status>
+<status status="PASS" endtime="20180129 23:48:19.776" starttime="20180129 23:48:19.721"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:22.473" starttime="20180129 22:52:22.045"></status>
+<status status="PASS" endtime="20180129 23:48:19.776" starttime="20180129 23:48:19.309"></status>
 </kw>
 <kw name="Delete user">
 <kw name="Get Matching Xpath Count" library="Selenium2Library">
@@ -555,18 +555,18 @@
 <assign>
 <var>${ROWCOUNT}</var>
 </assign>
-<msg timestamp="20180129 22:52:22.483" level="INFO">${ROWCOUNT} = 2</msg>
-<status status="PASS" endtime="20180129 22:52:22.483" starttime="20180129 22:52:22.474"></status>
+<msg timestamp="20180129 23:48:19.789" level="INFO">${ROWCOUNT} = 2</msg>
+<status status="PASS" endtime="20180129 23:48:19.789" starttime="20180129 23:48:19.777"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]//*[@class='btn btn-danger btn-xs']</arg>
 </arguments>
-<msg timestamp="20180129 22:52:22.484" level="INFO">Clicking element 'xpath=//table[@class='table table-hover']/tbody/tr[2]//*[@class='btn btn-danger btn-xs']'.</msg>
-<status status="PASS" endtime="20180129 22:52:22.560" starttime="20180129 22:52:22.483"></status>
+<msg timestamp="20180129 23:48:19.790" level="INFO">Clicking element 'xpath=//table[@class='table table-hover']/tbody/tr[2]//*[@class='btn btn-danger btn-xs']'.</msg>
+<status status="PASS" endtime="20180129 23:48:19.860" starttime="20180129 23:48:19.789"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:22.560" starttime="20180129 22:52:22.474"></status>
+<status status="PASS" endtime="20180129 23:48:19.860" starttime="20180129 23:48:19.777"></status>
 </kw>
 <kw name="Check after delete user">
 <arguments>
@@ -580,8 +580,8 @@
 <assign>
 <var>${ROWCOUNT}</var>
 </assign>
-<msg timestamp="20180129 22:52:22.573" level="INFO">${ROWCOUNT} = 1</msg>
-<status status="PASS" endtime="20180129 22:52:22.573" starttime="20180129 22:52:22.562"></status>
+<msg timestamp="20180129 23:48:19.875" level="INFO">${ROWCOUNT} = 1</msg>
+<status status="PASS" endtime="20180129 23:48:19.875" starttime="20180129 23:48:19.861"></status>
 </kw>
 <kw name="Wait Until Element Does Not Contain" library="Selenium2Library">
 <doc>Waits until given element does not contain `text`.</doc>
@@ -589,20 +589,20 @@
 <arg>xpath=//table[@class='table table-hover']/tbody/tr[${ROWCOUNT}]</arg>
 <arg>${USER}</arg>
 </arguments>
-<status status="PASS" endtime="20180129 22:52:22.618" starttime="20180129 22:52:22.574"></status>
+<status status="PASS" endtime="20180129 23:48:19.917" starttime="20180129 23:48:19.875"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:22.619" starttime="20180129 22:52:22.561"></status>
+<status status="PASS" endtime="20180129 23:48:19.917" starttime="20180129 23:48:19.861"></status>
 </kw>
 <kw type="teardown" name="Close Website">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180129 22:52:25.714" starttime="20180129 22:52:22.620"></status>
+<status status="PASS" endtime="20180129 23:48:23.016" starttime="20180129 23:48:19.918"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:25.715" starttime="20180129 22:52:22.619"></status>
+<status status="PASS" endtime="20180129 23:48:23.016" starttime="20180129 23:48:19.917"></status>
 </kw>
-<status status="PASS" endtime="20180129 22:52:25.716" critical="yes" starttime="20180129 22:52:15.486"></status>
+<status status="PASS" endtime="20180129 23:48:23.017" critical="yes" starttime="20180129 23:48:08.859"></status>
 </test>
-<status status="PASS" endtime="20180129 22:52:25.726" starttime="20180129 22:50:58.833"></status>
+<status status="PASS" endtime="20180129 23:48:23.020" starttime="20180129 23:46:37.982"></status>
 </suite>
 <statistics>
 <total>
